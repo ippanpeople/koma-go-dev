@@ -18,7 +18,7 @@ cd go-server
 ```
 - 初始化工程模塊
 ```bash
-go mod github.com/ippanpeople/go-server
+go mod github.com/ippanpeople/go-server-hello
 ```
 - 編寫服務器程序
 ```bash

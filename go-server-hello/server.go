@@ -18,14 +18,14 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "方法不支持", http.StatusNotFound)
 		return
 	}
-	// 像用戶端輸出內容
+	// 向用戶端輸出內容
 	fmt.Fprintf(w, "Hello Go World URL!")
 }
 
 func main() {
 	fmt.Println(">>Hello Welcome to Go Server<<")
 
-	// 實例化一個文件服務器, 且讓文件服務器使用本幣文件夾./static
+	// 實例化一個文件服務器, 且讓文件服務器使用本地文件夾./static
 	fileServer := http.FileServer(http.Dir("./static"))
 	// 當訪問根（/）時響應這個文件服務器給使用者
 	http.Handle("/", fileServer)
