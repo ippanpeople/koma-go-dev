@@ -1,0 +1,16 @@
+@server = http://127.0.0.1:8080
+
+###
+GET {{server}}/books
+
+###
+GET {{server}}/books/1
+
+###
+POST {{server}}/books
+
+###
+DELETE {{server}}/books/1
+
+###
+PUT {{server}}/books/1
