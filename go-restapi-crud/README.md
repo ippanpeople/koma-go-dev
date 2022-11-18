@@ -9,15 +9,15 @@
 ## 實作
 - 建立工程目錄
 ```bash
-mkdir go-restapi
+mkdir go-restapi-crud
 ```
 - 進入目錄
 ```bash
-cd go-restapi
+cd go-restapi-crud
 ```
 - 初始化工程模塊
 ```bash
-go mod github.com/ippanpeople/go-restapi
+go mod github.com/ippanpeople/go-restapi-crud
 ```
 - 安裝依賴模塊(路由模塊)
 ```bash
