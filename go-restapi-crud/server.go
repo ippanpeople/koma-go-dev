@@ -3,7 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 // 定義標準返回結果類型結果類型的結構體
@@ -39,7 +42,7 @@ func createBook(w http.ResponseWriter, r *http.Request) {
 		Result: "createBook",
 	})
 }
-func updatBook(w http.ResponseWriter, r *http.Request) {
+func updateBook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(ResponseResult{
 		Result: "updateBook",
 	})
@@ -51,5 +54,19 @@ func deleteBook(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println(">>Hello Welcome to Go REST API Server<<")
+
+	router := mux.NewRouter()
+	router.HandleFunc("/", index).Methods("GET")
+	router.HandleFunc("/books", listBooks).Methods("GET")
+	router.HandleFunc("/books/{id}", getBook).Methods("GET")
+	router.HandleFunc("/books/", createBook).Methods("POST")
+	router.HandleFunc("/books/", updateBook).Methods("PUT")
+	router.HandleFunc("/books/", deleteBook).Methods("DELETE")
+
+	fmt.Printf("服務器運行在端口 :8080\n")
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatal(err)
+	}
 
 }
