@@ -57,15 +57,16 @@ func main() {
 	fmt.Println(">>Hello Welcome to Go REST API Server<<")
 
 	router := mux.NewRouter()
+
 	router.HandleFunc("/", index).Methods("GET")
 	router.HandleFunc("/books", listBooks).Methods("GET")
 	router.HandleFunc("/books/{id}", getBook).Methods("GET")
-	router.HandleFunc("/books/", createBook).Methods("POST")
-	router.HandleFunc("/books/", updateBook).Methods("PUT")
-	router.HandleFunc("/books/", deleteBook).Methods("DELETE")
+	router.HandleFunc("/books", createBook).Methods("POST")
+	router.HandleFunc("/books/{id}", updateBook).Methods("PUT")
+	router.HandleFunc("/books/{id}", deleteBook).Methods("DELETE")
 
 	fmt.Printf("服務器運行在端口 :8080\n")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":8080", router); err != nil {
 		log.Fatal(err)
 	}
 
