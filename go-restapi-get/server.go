@@ -64,9 +64,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 // 定義基礎的CRUD函數, 並調用setSameHeader()函數使CRUD函數能返回JSON類型的資料
 func listBooks(w http.ResponseWriter, r *http.Request) {
 	setSameHeader(w)
-	json.NewEncoder(w).Encode(ResponseResult{
-		Result: "listBooks",
-	})
+	json.NewEncoder(w).Encode(books)
 }
 func getBook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(ResponseResult{
