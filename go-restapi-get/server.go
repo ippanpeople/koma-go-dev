@@ -90,8 +90,9 @@ func deleteBook(w http.ResponseWriter, r *http.Request) {
 func main() {
 	fmt.Println(">>Hello Welcome to Go REST API Server<<")
 
-	router := mux.NewRouter()
+	initBooks()
 
+	router := mux.NewRouter()
 	router.HandleFunc("/", index).Methods("GET")
 	router.HandleFunc("/books", listBooks).Methods("GET")
 	router.HandleFunc("/books/{id}", getBook).Methods("GET")
