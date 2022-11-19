@@ -4,7 +4,7 @@
 1. 建立微服務工程
 2. 編寫Go語言程序,初始化微服務
 3. 建立CRUD接口
-3. 運行調適
+4. 運行調適
 
 ## 實作
 - 建立工程目錄
@@ -23,9 +23,9 @@ go mod github.com/ippanpeople/go-restapi-crud
 ```bash
 go get -u github.com/gorilla/mux
 ```
-- 編寫服務器程序
+- 創建服務器程序
 ```bash
-vim server.go
+touch server.go
 ```
 - 編寫CRUD接口
 ```bash
