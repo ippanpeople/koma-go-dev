@@ -69,8 +69,17 @@ func listBooks(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(books)
 }
 func getBook(w http.ResponseWriter, r *http.Request) {
+	setSameHeader(w)
+	// 調用mux路由組建的Vars方法解析r請求流
+	params := mux.Vars(r) // 解析成功的結果（數組）
+	for _, item := range books {
+		if item.ID == params["id"] {
+			json.NewEncoder(w).Encode(item)
+			return
+		}
+	}
 	json.NewEncoder(w).Encode(ResponseResult{
-		Result: "getBook",
+		Result: "getBook:" + params["id"],
 	})
 }
 func createBook(w http.ResponseWriter, r *http.Request) {
