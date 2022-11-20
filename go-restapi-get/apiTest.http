@@ -2,3 +2,10 @@
 
 ###
 Get {{server}}/books
+
+###
+GET {{server}}/books/1
+###
+GET {{server}}/books/2
+###
+GET {{server}}/books/3
