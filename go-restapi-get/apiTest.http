@@ -9,3 +9,5 @@ GET {{server}}/books/1
 GET {{server}}/books/2
 ###
 GET {{server}}/books/3
+###
+GET {{server}}/books/4
