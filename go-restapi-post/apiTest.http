@@ -1,0 +1,25 @@
+@server = http://127.0.0.1:8080
+
+###
+GET {{server}}/books
+
+###
+POST {{server}}/books
+Content-Type: application/json
+
+{
+    "title": "GO GO POWER RANGER",
+    "price": 28,
+    "author": {
+        "name":  "ippanpeople"
+    }
+}
+###
+GET {{server}}/books
+
+###
+DELETE {{server}}/books/5
+
+###
+GET {{server}}/books
+
