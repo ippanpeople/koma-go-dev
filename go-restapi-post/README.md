@@ -20,7 +20,7 @@ cd go-restapi-get
 ```bash
 go mod github.com/ippanpeople/go-restapi-get
 ```
-- 安裝依賴模塊(路由模塊)
+- 安裝取得依賴模塊(路由模塊)
 ```bash
 go get -u github.com/gorilla/mux
 ```
