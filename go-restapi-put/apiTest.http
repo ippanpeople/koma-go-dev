@@ -1,0 +1,20 @@
+@server = http://127.0.0.1:8080
+
+###
+GET {{server}}/books
+
+###
+PUT {{server}}/books/2
+Content-Type: application/json
+
+{
+    "title": "GOLANG 真好玩！！",
+    "price": 888,
+    "author": {
+        "name":  "gogo888"
+    }
+}
+
+###
+GET {{server}}/books
+
